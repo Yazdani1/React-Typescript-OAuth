@@ -16,8 +16,7 @@ const SignUp = () => {
           <h5>Sign Up</h5>
 
           <div className={signInPageStyle.inputFormArea}>
-        
-  
+      
             <button
               className={signInPageStyle.signInButton}
             >
