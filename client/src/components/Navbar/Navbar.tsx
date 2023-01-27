@@ -7,7 +7,7 @@ import { getUserInfo } from "../../services/API";
 import {API_URL} from "../../services/Config"
 
 const Navbar = () => {
-
+  let navigate = useNavigate();
   const [userInfo, setUserInfo] = useState<any>(null);
 
   const loadUserInfo = async () => {
@@ -17,6 +17,18 @@ const Navbar = () => {
         setUserInfo(res.data.user);
         console.log("Token info"+res.data.token);
       }
+
+      // To check user role and based onuser role, we can send them to different page.
+      // if role is admin then send to admin page else subscriber page..
+      
+
+      // if (res.data.user?.role === "Subscriber") {
+      //   navigate("/admin");
+      // } else {
+      //   navigate("/dashboard");
+      // }
+
+
     } catch (error: any) {
       console.log(error);
     }

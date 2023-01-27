@@ -20,6 +20,7 @@ const App = () => {
       const res = await getUserInfo();
       if (res) {
         setUserInfo(res.data.user);
+        localStorage.setItem('access_token', res.data.token);
         console.log("Token info"+res.data.token);
       }
     } catch (error: any) {
