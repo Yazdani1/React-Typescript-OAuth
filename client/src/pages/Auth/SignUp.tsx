@@ -3,10 +3,18 @@ import { toast } from "react-toastify";
 import { useNavigate, Link } from "react-router-dom";
 
 import signInPageStyle from "./SignIn.module.scss";
+import {API_URL} from "../../services/Config";
 
 const SignUp = () => {
   /****************************************/
   /*********User Registration *************/
+
+
+  const onSubmitGoogleSignUp = ()=>{
+
+    window.open(API_URL+"/auth/google/callback","_self")
+
+  }
 
 
   return (
@@ -19,6 +27,7 @@ const SignUp = () => {
       
             <button
               className={signInPageStyle.signInButton}
+              onClick={onSubmitGoogleSignUp}
             >
               Google Sign Up
             </button>
