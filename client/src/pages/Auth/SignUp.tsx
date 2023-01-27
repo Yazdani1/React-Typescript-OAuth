@@ -9,6 +9,7 @@ const SignUp = () => {
   /****************************************/
   /*********User Registration *************/
 
+ 
 
   const onSubmitGoogleSignUp = ()=>{
 
@@ -22,6 +23,7 @@ const SignUp = () => {
       <div className={signInPageStyle.signInContainer}>
         <div className={signInPageStyle.signInFormDesign}>
           <h5>Sign Up</h5>
+
 
           <div className={signInPageStyle.inputFormArea}>
       

@@ -15,6 +15,7 @@ const Navbar = () => {
       const res = await getUserInfo();
       if (res) {
         setUserInfo(res.data.user);
+        console.log("Token info"+res.data.token);
       }
     } catch (error: any) {
       console.log(error);
