@@ -16,11 +16,12 @@ const Navbar = () => {
       if (res) {
         setUserInfo(res.data.user);
         console.log("Token info"+res.data.token);
+        localStorage.setItem("usertokeninfo",res.data.token);
       }
 
       // To check user role and based onuser role, we can send them to different page.
       // if role is admin then send to admin page else subscriber page..
-      
+
 
       // if (res.data.user?.role === "Subscriber") {
       //   navigate("/admin");
