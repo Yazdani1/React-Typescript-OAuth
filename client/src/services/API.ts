@@ -13,8 +13,22 @@ export const getUserInfo = async () => {
 };
 
 /****************************************/
-/*********Get User Post     *************/
+/********* Post     *************/
 /****************************************/
+
+export interface CreatePostProps {
+
+  title: string;
+
+}
+
+export const createPost = async(props:CreatePostProps)=>{
+
+  const res = await axios.post(API_URL + "/api/create-post",{...props},headerConfig());
+  return res;
+
+}
+
 
 export const getUserPosts = async () => {
   const res = await axios.get(API_URL + "/api/get-posts", headerConfig());
