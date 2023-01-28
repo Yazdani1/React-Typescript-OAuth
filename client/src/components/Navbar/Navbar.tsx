@@ -10,25 +10,25 @@ const Navbar = () => {
   let navigate = useNavigate();
   const [userInfo, setUserInfo] = useState<any>(null);
 
+
   const loadUserInfo = async () => {
     try {
       const res = await getUserInfo();
+
       if (res) {
         setUserInfo(res.data.user);
-        console.log("Token info"+res.data.token);
+      
         localStorage.setItem("usertokeninfo",res.data.token);
       }
 
       // To check user role and based onuser role, we can send them to different page.
       // if role is admin then send to admin page else subscriber page..
 
-
       // if (res.data.user?.role === "Subscriber") {
       //   navigate("/admin");
       // } else {
       //   navigate("/dashboard");
       // }
-
 
     } catch (error: any) {
       console.log(error);
@@ -40,8 +40,11 @@ const Navbar = () => {
   }, []);
 
 
+
+
   const logout = () => {
     window.open(API_URL+"/auth/logout", "_self");
+    // window.localStorage.removeItem("usertokeninfo");
   };
 
 

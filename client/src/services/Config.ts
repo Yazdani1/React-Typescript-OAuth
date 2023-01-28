@@ -4,11 +4,10 @@ export const API_URL = "http://localhost:5000";
 
 export const headerConfig = () => {
   return {
-    credentials: "include",
     headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Credentials": true,
+      Authorization: `Bearer ${localStorage.getItem("usertokeninfo")}`,
     },
   };
 };
+
+
